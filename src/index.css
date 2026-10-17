@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Smooth Scrolling Enabled */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f1f5f9;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background-image: 
+      linear-gradient(to right, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* Black & Deep Blue Cyberpunk Utilities */
+.cyber-card {
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.cyber-card:hover {
+  border-color: rgba(0, 243, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.25), inset 0 0 15px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}

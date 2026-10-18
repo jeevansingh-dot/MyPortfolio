@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import { HiExternalLink, HiCode } from 'react-icons/hi';
 
 export default function Projects() {

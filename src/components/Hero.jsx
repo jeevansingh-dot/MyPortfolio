@@ -22,19 +22,19 @@ const TECH = ['React.js', 'Node.js', 'Express', 'MongoDB', 'Java', 'Python']
 
 export default function Hero() {
   const [reduceMotion] = useState(
-    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
 
   return (
-    <section id="home" className="relative overflow-hidden py-12 sm:py-20">
+    <section id="home" className="relative overflow-hidden pt-24 sm:pt-28 pb-12 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Text & Profile Side (7 columns) */}
           <div className="lg:col-span-7 text-left space-y-6">
             
             {/* Status & Available for Work Badges */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-500/20 font-mono">
                 <HiTerminal className="w-3.5 h-3.5" /> B.Tech CSE Final Year
               </span>
@@ -46,15 +46,15 @@ export default function Hero() {
             </div>
 
             {/* Profile Photo + Heading Layout */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
               <div className="relative shrink-0">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl blur opacity-75"></div>
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-900 border border-blue-500/30 overflow-hidden flex items-center justify-center shadow-xl">
-                 <img 
-  src="/Jeevanphoto.png_page-0001.jpg" 
-  alt="Jeevan Singh" 
-  className="w-full h-full object-cover"
-/>
+                  <img 
+                    src="/Jeevanphoto.png_page-0001.jpg" 
+                    alt="Jeevan Singh" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -71,14 +71,14 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Typewriter Effect Line (Ek ke baad ek role type aur delete hoga) */}
-            <div className="pt-2">
+            {/* Typewriter Effect Line */}
+            <div className="pt-1 sm:pt-2">
               <p className="sr-only">
                 Full stack developer, DSA problem solver, and backend engineer.
               </p>
               <div
                 aria-hidden="true"
-                className="flex min-h-[2.5rem] items-center text-xl sm:text-2xl font-semibold text-blue-400 dark:text-blue-400 font-mono"
+                className="flex min-h-[2.5rem] items-center text-lg sm:text-2xl font-semibold text-blue-400 dark:text-blue-400 font-mono"
               >
                 <span className="mr-2 text-slate-500">&gt;</span>
                 {reduceMotion ? (
@@ -97,7 +97,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="max-w-xl text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="max-w-xl text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
               Crafting scalable web systems with the MERN stack, Java and AI-driven solutions.
             </p>
 
@@ -114,7 +114,7 @@ export default function Hero() {
             </ul>
 
             {/* Action Buttons & Socials */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3 font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-700"
@@ -130,7 +130,7 @@ export default function Hero() {
                 Resume <HiDownload className="ml-2 h-5 w-5" />
               </a>
 
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3 pt-2 sm:pt-0">
                 <a
                   href={GITHUB_URL}
                   target="_blank"
@@ -154,8 +154,8 @@ export default function Hero() {
           </div>
 
           {/* Right 3D Side (5 columns) */}
-          <div className="lg:col-span-5">
-            <Suspense fallback={<div className="h-80 w-full sm:h-[26rem]" aria-hidden="true" />}>
+          <div className="lg:col-span-5 w-full">
+            <Suspense fallback={<div className="h-64 sm:h-80 w-full lg:h-[26rem]" aria-hidden="true" />}>
               <Hero3D />
             </Suspense>
           </div>
